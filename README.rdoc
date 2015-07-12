@@ -1,27 +1,64 @@
-== README
+Ecommerce Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this tutorial you will learn how to build out an ecommerce site using Spree for backend inventory management and creating custom views.
 
-Things you may want to cover:
+If you do not already please install the rails 4.2.4 gem 
 
-* Ruby version
+$ gem install rails -v 4.2.2
 
-* System dependencies
+As well as imagemagick.
 
-* Configuration
+$ brew install imagemagick
 
-* Database creation
+And the Spree gem.
 
-* Database initialization
+$ gem install spree_cmd
 
-* How to run the test suite
+Next we will create our initial rails app with the following command. (Note that if you are not going to use your defaulted database here you will want to speciy this by adding -d postgresql (or whatever database you choose to use) to the end of the command)
 
-* Services (job queues, cache servers, search engines, etc.)
+$ rails new ecommerce_store 
 
-* Deployment instructions
+Now you will want to cd into the new rails application that we have just created. This is where we are going to install spree with the following command! But before we do this we need to create our database with the following command.
 
-* ...
+$ rake db:create
+
+Now you are ready to install spree.
+
+$ spree install --auto-accept
+
+Note that if you omit the --auto-accept from this command than you can specify whether Spree install/runs/loads the following.
+
+#1. Default Gateways
+#2. Default Authentication System
+#3. Run the migrations
+#4. Load the seed data
+#5. Load the sample data
+
+During this process the console may ask you to create the admin user. Just press enter at both prompts to use the default email and password or if you would like feel free to create your own.
+
+One of the most frustrating things about following spree's documentation here is that they don't tell you that when Spree is installed into your app the default authentication that it comes with (spree_auth_devise) is a its own gem and therfore didn't get installed when we ran the spree install command. To fix this we are going to need to run the following command.
+
+$ bundle exec rails g spree:auth:install
+
+Now that we have made it past that hurdle we are ready to spin up our app and take a look at the amazing work that Spree has already done for us. To do this you are going to run the following command.
+
+$ rails s
+
+Now, navigate to http://localhost:3000/
+
+We are going to customize the views during this turorial but it is a good idea to take a look around and familiarize yourself with the set up of spree. After taking some time to look at the front end go back to your address bar and type in the following.
+
+http://localhost:3000/admin
+
+Here spree is going to prompt you for the admin username and password that we created earlier. Enter these in and again take some time to familiarize yourself with Spree.
+
+Great, now we are ready to move on.
+
+
+
+
+
+
 
 
 Please feel free to use a different markup language if you do not plan to run
