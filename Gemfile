@@ -22,6 +22,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+#this is the bourbon the sass library
+gem 'bourbon'
+#this is neat the grid framework
+gem 'neat'
 
 
 gem 'spree', '3.0.1'
