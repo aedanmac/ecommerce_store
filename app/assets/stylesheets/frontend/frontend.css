@@ -1,6 +1,6 @@
 @import "bourbon/bourbon";
-@import "bourbon/bourbon";
 @import "neat/neat";
+
 
 .main-header {
 	width: 100%;
@@ -125,3 +125,8 @@ p {
   display: block;
   font-size: 26px;
 }
+
+.product-body {
+  height: 170px;
+}
+
